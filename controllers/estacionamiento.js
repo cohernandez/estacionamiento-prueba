@@ -1,4 +1,4 @@
-cd//File: controllers/tvshows.js
+//File: controllers/tvshows.js
 //Aca van todas las funciones tales como si fuesen control remoto, las cuales son llamadas como funciones
 
 var mongoose = require('mongoose');
@@ -20,7 +20,7 @@ exports.findById = function(req, res) {
     if(err) return res.send(500, err.message);
 
     console.log('GET /tvshow/' + req.params.id);
-        res.status(200).jsonp(Estacionamiento);
+        res.status(200).jsonp(estacionamiento);
     });
 };
 
@@ -29,14 +29,14 @@ exports.addEstacionamiento = function(req, res) {
     console.log('POST');
     console.log(req.body);
 
-    var Estacionamiento = new Estacionamiento({
+    var estacionamiento = new Estacionamiento({
         ubicacion:    req.body.ubicacion,
         horario:  req.body.horario,
         precio:     req.body.precio,
         dias:   req.body.dias,
         disponible:  req.body.disponible,
     });
-    Estacionamiento.save(function(err, estacionamiento) {
+    estacionamiento.save(function(err, estacionamiento) {
         if(err) return res.status(500).send( err.message);
     res.status(200).jsonp(estacionamiento);
     });

@@ -5,7 +5,7 @@ var estacionamientoSchema = new Schema({
   ubicacion:{ type: [Number] },
   horario:  { desde: {type: String }, hasta: {type: String}},
   precio:   { type: Number },
-    dias:    { type: String, enum:
+    dias:    { type: [String], enum:
     ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes','Sabado', 'Domingo']
         },
   disponible: { type: Boolean },
